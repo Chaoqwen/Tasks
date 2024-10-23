@@ -214,10 +214,46 @@
             margin-top: 40px;
             width: 160px;
             height: 80px;
+            z-index: 9;
+        }
+
+        .courseList span img {
+            position: absolute;
+        }
+
+        .courseList span:hover {
+            animation: move 3s linear backwards;
+        }
+
+        @keyframes move {
+            50% {
+                background-position: center -200px;
+            }
         }
 
         .courseList span:last-child {
             margin-right: 0;
+        }
+
+        .courseList span {
+            position: relative;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+
+        .hover-image {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100px;
+            height: auto;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .courseList span:hover .hover-image {
+            top: -20px;
+            opacity: 1;
         }
 
         footer {
@@ -237,7 +273,7 @@
 <body>
     <header>
         <!-- 记得换背景 -->
-        <img src="img\Snipaste_2024-10-22_22-25-45.jpg" id="logo">
+        <img src="img/Snipaste_2024-10-22_22-25-45.jpg" id="logo">
         <span class="icon">首页</span>
         <span class="icon">分类查看</span>
         <div class="search">
@@ -306,22 +342,27 @@
                 <span>
                     <h3>《毛泽东思想》</h3>
                     <p>赵三金</p>
+                    <img class="hover-image" src="#">
                 </span>
                 <span>
                     <h3>《邓小平理论》</h3>
                     <p>胡一薇</p>
-                    <!-- <img src="img\Snipaste_2024-10-23_21-49-56.jpg"> -->
+                    <img class="hover-image" src="#">
                 </span>
                 <span>
                     <h3>《科学发展观》</h3>
                     <p>梁非凡</p>
+                    <img class="hover-image" src="#">
                 </span>
                 <span>
                     <h3>《三个代表》</h3>
                     <p>韩一尾</p>
+                    <img class="hover-image" src="#">
                 </span>
             </div>
+            </span>
         </div>
+    </div>
     </div>
 
     <footer>1</footer>

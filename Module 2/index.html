@@ -49,6 +49,13 @@
 
         .icon {
             margin: 0 1vw;
+            cursor: pointer;
+
+        }
+
+        .icon:hover {
+            color: #1ec091;
+            transition: all 0.3s ease;
         }
 
         .search {
@@ -102,6 +109,12 @@
             height: 1.5em;
             text-align: center;
             letter-spacing: 0.5em;
+            cursor: pointer;
+        }
+
+        #logout:hover {
+            background-color: #00642b;
+            transition: all 0.3s ease;
         }
 
         .part {
@@ -184,21 +197,20 @@
             align-items: center;
             justify-content: center;
             width: 20%;
-            /* 每个元素占据一行的 20% */
             height: 63px;
             box-sizing: border-box;
-            /* 确保边框不会影响元素的整体尺寸 */
             margin: 0;
-            /* 确保没有外边距 */
-            /* gap: 0; */
+            gap: 0;
         }
 
         .border {
             border: 2px solid #25c295;
+            cursor: pointer;
         }
 
         .border:hover {
             background-color: #25c295;
+            transition: all 0.3s ease;
 
         }
 
@@ -244,6 +256,10 @@
             width: 160px;
             height: 80px;
             z-index: 9;
+            position: relative;
+            margin: 20px 0;
+            cursor: pointer;
+            margin-left: 20px;
         }
 
         .courseList span img {
@@ -252,6 +268,7 @@
 
         .courseList span:hover {
             animation: move 3s linear backwards;
+            background-color: #e64a19;
         }
 
         @keyframes move {
@@ -264,12 +281,6 @@
             margin-right: 0;
         }
 
-        .courseList span {
-            position: relative;
-            margin: 20px 0;
-            cursor: pointer;
-        }
-
         .hover-image {
             position: absolute;
             top: 100%;
@@ -277,16 +288,14 @@
             width: 100px;
             height: auto;
             opacity: 0;
-            transition: all 0.3s ease;
+            z-index: 1;
         }
-
-        /* .couresList span {
-            gap: 20px;
-        } */
 
         .courseList span:hover .hover-image {
             top: -20px;
             opacity: 1;
+            transition: opacity 2s ease;
+            transition: position 1s ease;
         }
 
         footer {
@@ -375,22 +384,22 @@
                 <span>
                     <h3>《毛泽东思想》</h3>
                     <p>赵三金</p>
-                    <img class="hover-image" src="#">
+                    <img class="hover-image" src="img/Snipaste_2024-10-28_19-16-27.jpg">
                 </span>
                 <span>
                     <h3>《邓小平理论》</h3>
                     <p>胡一薇</p>
-                    <img class="hover-image" src="#">
+                    <img class="hover-image" src="img/Snipaste_2024-10-28_19-16-27.jpg">
                 </span>
                 <span>
                     <h3>《科学发展观》</h3>
                     <p>梁非凡</p>
-                    <img class="hover-image" src="#">
+                    <img class="hover-image" src="img/Snipaste_2024-10-28_19-16-27.jpg">
                 </span>
                 <span>
                     <h3>《三个代表》</h3>
                     <p>韩一尾</p>
-                    <img class="hover-image" src="#">
+                    <img class="hover-image" src="img/Snipaste_2024-10-28_19-16-27.jpg">
                 </span>
             </div>
             </span>

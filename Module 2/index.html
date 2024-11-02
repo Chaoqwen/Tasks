@@ -190,6 +190,11 @@
             justify-content: center;
             flex-wrap: wrap;
             margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .classList .class {
+            margin: 0;
         }
 
         .class {
@@ -206,6 +211,7 @@
         .border {
             border: 2px solid #25c295;
             cursor: pointer;
+            box-sizing: border-box;
         }
 
         .border:hover {
@@ -222,6 +228,10 @@
             width: 20%;
             height: 63px;
             margin: 0;
+            border: none;
+            box-sizing: border-box;
+            text-decoration: underline;
+
         }
 
         .green {
@@ -246,7 +256,7 @@
             text-align: center;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
         }
 
         .courseList span {
@@ -368,7 +378,7 @@
                 <span class="class blank">02</span>
                 <span class="class border">张勇<br>《java语言程序设计》</span>
                 <span class="class blank">04</span>
-                <span class="class border">张国<br>《计算机组装》</span><br>
+                <span class="class border">张国<br>《计算机组装》</span>
                 <span class="class blank">01</span>
                 <span class="class border">李达<br>《大学生语文》</span>
                 <span class="class blank">03</span>

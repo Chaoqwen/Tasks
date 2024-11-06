@@ -1,10 +1,8 @@
-for (counter = 0; counter < 100; counter++) {
+for (counter = 1; counter <= 100; counter++) {
+    let ot = "";
     if (counter % 3 == 0)
-        console.log("Fizz");
-    else if (counter % 5 == 0)
-        console.log("Buzz");
-    else if (counter % 3 == 0 && counter % 5 == 0)
-        console.log("FizzBuzz");
-    else
-        console.log(counter);
-}
+        ot += "Fizz";
+    if (counter % 5 == 0)
+        ot += "Buzz";
+    console.log(ot || counter);
+} n

@@ -8,3 +8,4 @@ function isEven(number) {
     else if (number < 0)
         return isEven(number = -number)
 }
+console.log(isEven(-1))

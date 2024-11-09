@@ -1,51 +1,47 @@
 class Group {
-    #members = [];
+    properties = [];
+
     add(value) {
         if (!this.has(value)) {
-            this.#members.push(value);
+            this.properties.push(value);
         }
     }
+
     delete(value) {
-        this.#members = this.#members.filter(v => v !== value);
+        this.properties = this.properties.filter(n => n !== value);
     }
+
     has(value) {
-        return this.#members.includes(value);
+        return this.properties.includes(value);
     }
-    static from(A) {
+
+    static from(mix) {
         let group = new Group;
-        for (let value of A) {
+        for (let value of mix) {
             group.add(value);
         }
         return group;
     }
+
+    // 添加可迭代性
     [Symbol.iterator]() {
-        return new GroupIterator(this.#members);
-    }
-}
-class GroupIterator {
-    #members;
-    #position;
-    constructor(members) {
-        this.#members = members;
-        this.#position = 0;
-    }
-    next() {
-        if (this.#position >= this.#members.length) {
-            return { done: true };
-        } else {
-            let result = {
-                value: this.#members[this.#position],
-                done: false
-            };
-            this.#position++;
-            return result;
-        }
+        let index = 0;
+        let properties = this.properties;
+
+        return {
+            next() {
+                if (index < properties.length) {
+                    return { value: properties[index++], done: false };
+                } else {
+                    return { done: true };
+                }
+            }
+        };
+
     }
 }
 
-for (let value of Group.from(["a", "b", "c"])) {
-    console.log(value);
+let group = Group.from(['a', 'b', 'c']);
+for (let value of group) {
+    console.log(value); // 输出: a, b, c
 }
-// → a
-// → b
-// → c

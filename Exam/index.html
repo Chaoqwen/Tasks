@@ -11,20 +11,23 @@
             padding: 0;
         }
 
+        html,
         body {
             box-sizing: border-box;
-            position: absolute;
-            height: 200%;
+            position: relative;
+            width: 100%;
+            height: 150%;
             overflow: auto;
         }
 
         .header {
             position: fixed;
-            width: 100vw;
+            width: 100%;
             height: 65px;
             background-color: white;
             border-top: 5px solid #D7751A;
-            border-bottom: 2px solid #ECEEEF
+            border-bottom: 2px solid #ECEEEF;
+            z-index: 9;
         }
 
         .iconBar {
@@ -85,10 +88,9 @@
             flex-direction: column;
             flex: 1;
             position: fixed;
-            top: 69px;
-            float: left;
-            height: 100vh;
-            width: 20vw;
+            top: 72px;
+            height: 100%;
+            width: 20%;
             border-right: 2px solid #ECEEEF;
         }
 
@@ -97,18 +99,81 @@
             height: 100px;
         }
 
+        .active {
+            background-color: #F1F2F3;
+        }
+
+        /* content在这里 */
         .content {
+            display: flex;
+            justify-content: center;
             float: right;
-            width: 70vw;
-            height: 100%;
+            position: relative;
+            top: 72px;
+            width: 80%;
+            height: 85%;
+            overflow: hidden;
+        }
+
+        .content .default {
+            margin-top: 200px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .activeText {
+            display: block;
+        }
+
+        .content img {
+            float: left;
+            scale: 0.7;
+        }
+
+        .content img:hover {
+            cursor: pointer;
+        }
+
+        .detail {
+            display: none;
+        }
+
+        .detailed {
+            display: inline-block;
+            z-index: 9;
+            background-color: #1476D1;
+        }
+
+        .content .linkings {
+            float: right;
+            transform: translate(400px, 300px);
+            background-color: #FAEDC7;
+            width: 50px;
+            height: 100px;
+        }
+
+        .content a {
+            display: block;
+            text-decoration: none;
+            background-color: #FDF7E8;
+            transition: all 0.5s linear;
+            color: black;
+        }
+
+        .content a:hover {
+            color: #1476D1;
         }
 
         .footer {
             position: absolute;
             bottom: 0;
-            width: 100vw;
+            width: 100%;
             height: 300px;
+            z-index: 9;
             background-color: black;
+            overflow: hidden;
         }
 
         .iconBottom {
@@ -152,19 +217,30 @@
         <button class="hoverButton signUp button">Sign up</button>
     </header>
     <div class="navBar">
-        <div class="hoverBox anchors"><svg t="1731727524787" class="icon" viewBox="0 0 1024 1024" version="1.1"
+        <div class="hoverBox anchors" id="one"><svg t="1731727524787" class="icon" viewBox="0 0 1024 1024" version="1.1"
                 xmlns="http://www.w3.org/2000/svg" p-id="8319" width="10px" height="10px">
                 <path
                     d="M563.197 0H460.803L0.013 486.388s0.9 102.396 51.2 102.396h76.796v332.817c0 100.3 102.397 102.399 102.397 102.399h204.797V665.583c0-25.647 25.6-25.6 25.6-25.6H563.2s25.6 0.852 25.6 25.6V1024h204.796c105.147 0 102.398-102.4 102.398-102.4V563.186h76.799c49.597 0 51.196-76.796 51.196-76.796L563.198 0z"
                     p-id="8320"></path>
             </svg>1</div>
-        <div class="hoverBox anchors">2</div>
-        <div class="hoverBox anchors">3</div>
-        <div class="hoverBox anchors">4</div>
-        <div class="hoverBox anchors">5</div>
+        <div class="hoverBox anchors" id="two">2</div>
     </div>
     <div class="content">
-        <div class="sideBar"></div>
+        <div>
+            <img src="img/8b682750-1b5e-4774-b90c-ce51d5ef2a80.png" id="avatar">
+            <div class="detail">
+                这是简介
+            </div>
+        </div>
+        <div class="default">这是默认的内容</div>
+        <div class="hidden one">这是1</div>
+        <div class="hidden two">这是2</div>
+        <div class="linkings">
+            <a href="#">aaaa</a>
+            <a href="#">bbbb</a>
+            <a href="#">cccc</a>
+            <a href="#">dddd</a>
+        </div>
     </div>
     <footer class="footer">
         <svg t="1731727929606" class="iconBottom" viewBox="0 0 1024 1024" version="1.1"
@@ -183,6 +259,40 @@
             <span>5</span>
         </div>
     </footer>
+    <script>
+        const pre = document.querySelector('.default')
+
+        const anchorsOne = document.querySelector('#one')
+        const anchorsTwo = document.querySelector('#two')
+
+        const textForOne = document.querySelector('.one')
+        const textFortwo = document.querySelector('.two')
+
+        const avatar = document.querySelector('#avatar')
+
+        const detail = document.querySelector('.detail')
+
+        anchorsOne.onclick = function () {
+            anchorsTwo.classList.remove('active')
+            anchorsOne.classList.add('active')
+            textForOne.classList.remove('hidden')
+            pre.classList.add('hidden')
+        }
+
+        anchorsTwo.onclick = function () {
+            anchorsOne.classList.remove('active')
+            anchorsTwo.classList.add('active')
+            textForOne.classList.add('hidden')
+            pre.classList.remove('hidden')
+        }
+
+        avatar.mouseEnter = function () {
+            setTimeout(detail.classList.add('detailed'), 1000)
+        }
+        avatar.mouseLeave = function () {
+            setTimeout(detail.classList.remove('detailed'), 1000)
+        }
+    </script>
 </body>
 
 </html>

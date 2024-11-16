@@ -286,12 +286,17 @@
             pre.classList.remove('hidden')
         }
 
-        avatar.mouseEnter = function () {
-            setTimeout(detail.classList.add('detailed'), 1000)
-        }
-        avatar.mouseLeave = function () {
-            setTimeout(detail.classList.remove('detailed'), 1000)
-        }
+        avatar.addEventListener('mouseenter', function () {
+            setTimeout(function () {
+                detail.classList.add('detailed');
+            }, 1000);
+        });
+        avatar.addEventListener('mouseleave', function () {
+            setTimeout(function () {
+                detail.classList.remove('detailed');
+            }, 1000);
+        });
+
     </script>
 </body>
 

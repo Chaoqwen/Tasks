@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stack Overflow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            box-sizing: border-box;
+            position: absolute;
+            height: 200%;
+            overflow: auto;
+        }
+
+        .header {
+            width: 100vw;
+            height: 65px;
+            background-color: white;
+            border-top: 5px solid #D7751A;
+            border-bottom: 2px solid #ECEEEF
+        }
+
+        .iconBar {
+            display: inline-block;
+            width: 165px;
+            height: 65px;
+            margin-left: 20px;
+            text-align: justify;
+        }
+
+        .hoverBox:hover {
+            background-color: #F1F2F3;
+        }
+
+        .icon {
+            transform: translateY(10px);
+        }
+
+        .header .link {
+            display: inline-block;
+            text-align: justify;
+            height: 65px;
+            margin-left: 20px;
+            text-decoration: none;
+            color: #A4B7CB;
+        }
+
+        .navBar {}
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100vw;
+            height: 300px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="iconBar hoverBox">
+            <svg t="1731723451366" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                p-id="5950" width="40px" height="40px">
+                <path d="M794.368 932.608V658.56h91.392V1024H64v-365.44h91.392v274.048h638.976z" fill="#000000"
+                    p-id="5951"></path>
+                <path
+                    d="M246.848 841.28h456.768v-91.392H246.848v91.392zM656.256 0L582.912 54.528l272.64 366.528 73.344-54.528L656.256 0z m-226.56 216.128l350.976 292.288 58.432-70.208L488.128 145.92l-58.496 70.208zM315.008 419.2l414.08 192.832 38.592-82.816-414.08-192.832-38.592 82.816z m-59.2 214.016l447.04 94.016 18.816-89.472-447.04-93.952-18.816 89.408z"
+                    fill="#D7751A" p-id="5952" data-spm-anchor-id="a313x.search_index.0.i18.53753a81cps4Qe" class="">
+                </path>
+            </svg>
+            <span>
+                stack <b>Overflow<b>
+            </span>
+        </div>
+        <a href="#" class="link hoverBox">About</a>
+        <a href="#" class="link hoverBox">Products</a>
+        <a href="#" class="link hoverBox">OverflowAI</a>
+    </header>
+    <div class="navBar"></div>
+    <div class="content"></div>
+    <div class="sideBar"></div>
+    <footer class="footer"></footer>
+</body>
+
+</html>

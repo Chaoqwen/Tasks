@@ -1,9 +1,7 @@
-/**
- * @param {Object|Array} obj
- * @return {boolean}
- */
-let isEmpty = function (obj) {
-    if (!obj.keys || !obj)
+var isEmpty = function (obj) {
+    if (!Object.keys(obj))
+        return true
+    else if (!obj)
         return true
     else
         return false
@@ -15,4 +13,3 @@ let obj3 = [1, 2, 3, 4, 5]
 console.log(isEmpty(obj))
 console.log(isEmpty(obj2))
 console.log(isEmpty(obj3))
-Object.keys

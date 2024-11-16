@@ -19,6 +19,7 @@
         }
 
         .header {
+            position: fixed;
             width: 100vw;
             height: 65px;
             background-color: white;
@@ -34,24 +35,73 @@
             text-align: justify;
         }
 
+        .bold {
+            font-weight: bold;
+        }
+
         .hoverBox:hover {
             background-color: #F1F2F3;
         }
 
-        .icon {
+        .iconTop {
             transform: translateY(10px);
         }
 
         .header .link {
             display: inline-block;
-            text-align: justify;
-            height: 65px;
+            text-align: center;
+            height: 30px;
             margin-left: 20px;
             text-decoration: none;
             color: #A4B7CB;
+            border-radius: 10px;
         }
 
-        .navBar {}
+        input[type="text"] {
+            margin: 0 40px;
+            border-radius: 10px;
+            height: 50%;
+            width: 650px;
+        }
+
+        .button {
+            margin: auto 0;
+            border: 1px solid #1476D1;
+            border-radius: 6px;
+            height: 50%;
+            width: 80px;
+            color: #1476D1;
+            transition: all 0.4s linear;
+        }
+
+        .hoverButton:hover {
+            background-color: #1476D1;
+            color: white;
+            cursor: pointer;
+        }
+
+        .navBar {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            position: fixed;
+            top: 69px;
+            float: left;
+            height: 100vh;
+            width: 20vw;
+            border-right: 2px solid #ECEEEF;
+        }
+
+        .anchors {
+            text-align: center;
+            height: 100px;
+        }
+
+        .content {
+            float: right;
+            width: 70vw;
+            height: 100%;
+        }
 
         .footer {
             position: absolute;
@@ -60,14 +110,30 @@
             height: 300px;
             background-color: black;
         }
+
+        .iconBottom {
+            margin-left: 80px;
+            margin-top: 60px;
+        }
+
+        .bord {
+            transform: translateX(180px);
+        }
+
+        .bord span {
+            display: inline-block;
+            color: white;
+            height: 70%;
+            width: 15%;
+        }
     </style>
 </head>
 
 <body>
     <header class="header">
         <div class="iconBar hoverBox">
-            <svg t="1731723451366" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                p-id="5950" width="40px" height="40px">
+            <svg t="1731723451366" class="iconTop" viewBox="0 0 1024 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="5950" width="40px" height="40px">
                 <path d="M794.368 932.608V658.56h91.392V1024H64v-365.44h91.392v274.048h638.976z" fill="#000000"
                     p-id="5951"></path>
                 <path
@@ -75,18 +141,48 @@
                     fill="#D7751A" p-id="5952" data-spm-anchor-id="a313x.search_index.0.i18.53753a81cps4Qe" class="">
                 </path>
             </svg>
-            <span>
-                stack <b>Overflow<b>
-            </span>
+            <span>stack</span>
+            <span class="bold">Overflow</span>
         </div>
         <a href="#" class="link hoverBox">About</a>
         <a href="#" class="link hoverBox">Products</a>
         <a href="#" class="link hoverBox">OverflowAI</a>
+        <input type="text" value="Search...">
+        <button class="hoverButton logIn button">Log in</button>
+        <button class="hoverButton signUp button">Sign up</button>
     </header>
-    <div class="navBar"></div>
-    <div class="content"></div>
-    <div class="sideBar"></div>
-    <footer class="footer"></footer>
+    <div class="navBar">
+        <div class="hoverBox anchors"><svg t="1731727524787" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                xmlns="http://www.w3.org/2000/svg" p-id="8319" width="10px" height="10px">
+                <path
+                    d="M563.197 0H460.803L0.013 486.388s0.9 102.396 51.2 102.396h76.796v332.817c0 100.3 102.397 102.399 102.397 102.399h204.797V665.583c0-25.647 25.6-25.6 25.6-25.6H563.2s25.6 0.852 25.6 25.6V1024h204.796c105.147 0 102.398-102.4 102.398-102.4V563.186h76.799c49.597 0 51.196-76.796 51.196-76.796L563.198 0z"
+                    p-id="8320"></path>
+            </svg>1</div>
+        <div class="hoverBox anchors">2</div>
+        <div class="hoverBox anchors">3</div>
+        <div class="hoverBox anchors">4</div>
+        <div class="hoverBox anchors">5</div>
+    </div>
+    <div class="content">
+        <div class="sideBar"></div>
+    </div>
+    <footer class="footer">
+        <svg t="1731727929606" class="iconBottom" viewBox="0 0 1024 1024" version="1.1"
+            xmlns="http://www.w3.org/2000/svg" p-id="9292" width="48" height="48">
+            <path d="M794.368 932.608V658.56h91.392V1024H64v-365.44h91.392v274.048h638.976z" fill="#ffffff" p-id="9293"
+                data-spm-anchor-id="a313x.search_index.0.i32.53753a81cps4Qe" class="selected"></path>
+            <path
+                d="M246.848 841.28h456.768v-91.392H246.848v91.392zM656.256 0L582.912 54.528l272.64 366.528 73.344-54.528L656.256 0z m-226.56 216.128l350.976 292.288 58.432-70.208L488.128 145.92l-58.496 70.208zM315.008 419.2l414.08 192.832 38.592-82.816-414.08-192.832-38.592 82.816z m-59.2 214.016l447.04 94.016 18.816-89.472-447.04-93.952-18.816 89.408z"
+                fill="#D7751A" p-id="9294" data-spm-anchor-id="a313x.search_index.0.i29.53753a81cps4Qe" class=""></path>
+        </svg>
+        <div class="bord">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+        </div>
+    </footer>
 </body>
 
 </html>

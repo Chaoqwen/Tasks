@@ -1,5 +1,6 @@
 function shallowCopy(params) {
-
+    let x = { ...params }
+    return x
 }
 //样例
 let params = { a: 1, b: { c: 1 } }
